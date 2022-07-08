@@ -116,13 +116,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c66afc0bad11a8439a01e6c0c363bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 0
-  m_MovementSmoothing: 0
-  m_AirControl: 1
-  m_WhatIsGround:
+  jumpForce: 400
+  movementSmoothing: 0.05
+  airControl: 0
+  GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  m_GroundCheck: {fileID: 7989965155449209959}
+  groundCheck: {fileID: 7989965155449209959}
 --- !u!50 &7989965154535510444
 Rigidbody2D:
   serializedVersion: 4
