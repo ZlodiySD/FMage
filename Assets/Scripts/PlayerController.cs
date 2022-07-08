@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour
 
         if (horizontal != 0)
         {
-            moveController.Move(horizontal, isJump);
+            moveController.Move(horizontal * playerConfigs.moveConfig.MovementSpeed, isJump);
+        }
+        else
+        {
+            if(isJump)
+                moveController.Move(0, isJump);
         }
     }
 }

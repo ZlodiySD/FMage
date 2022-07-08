@@ -11,7 +11,7 @@ public class MoveController : MonoBehaviour
 	[HideInInspector]
 	public float m_MovementSmoothing = .05f;
 	[HideInInspector]
-	public bool m_AirControl = true;
+	public bool m_AirControl = false;
 
 	[SerializeField]
 	private LayerMask m_WhatIsGround;
@@ -33,6 +33,8 @@ public class MoveController : MonoBehaviour
 	{
 		m_JumpForce = moveConfig.JumpForce;
 		m_MovementSmoothing = moveConfig.MovementSmoothing;
+		m_AirControl = moveConfig.AirControl;
+		m_Rigidbody2D.gravityScale = moveConfig.GravityScale;
 	}
 
 	private void FixedUpdate()

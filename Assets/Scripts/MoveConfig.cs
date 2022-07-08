@@ -8,10 +8,11 @@ public class MoveConfig
     public float JumpForce;
 
     [Range(0, .5f)]
+    [Header("AKA inercia")]
     public float MovementSmoothing;
-
     public bool AirControl;
 
     [Range(0, 10f)]
-    public float PlayerGravity;
+    [Header("Gravity force, default is 1")]
+    public float GravityScale;
 }
