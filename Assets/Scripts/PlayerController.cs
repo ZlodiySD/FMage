@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         spellCaster = new SpellCaster(sphereHolder);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         GetMoveIput();
         GetCastInput();
