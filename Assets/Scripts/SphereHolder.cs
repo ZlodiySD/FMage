@@ -44,7 +44,7 @@ public class SphereHolder : MonoBehaviour
     {
         sphere.SetCaster(gameObject);
         magicSpheresConfigs.Add(sphere.magicShpereConfig);
-
+ 
         SpheresChanged?.Invoke(magicSpheresConfigs);
 
         Debug.Log("Sphere added: " + sphere.magicShpereConfig.magicShpereName);

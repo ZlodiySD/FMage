@@ -37,10 +37,8 @@ public class MoveController : MonoBehaviour
 		_rigidbody.gravityScale = moveConfig.GravityScale;
 	}
 
-	private void FixedUpdate()
+	private void Update()
 	{
-		//_rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, jumpForce);
-
 		grounded = false;
 
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, GroundLayer);
