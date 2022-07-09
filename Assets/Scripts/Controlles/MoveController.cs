@@ -37,17 +37,7 @@ public class MoveController : MonoBehaviour
 		Gizmos.DrawWireSphere(groundCheck.position, groundedRadius);
     }
 
-    public void SetConfig(MoveConfig moveConfig)
-	{
-		fallingThreshold = moveConfig.FallingThreshold;
-		jumpForce = moveConfig.JumpForce;
-		movementSmoothing = moveConfig.MovementSmoothing;
-		airControl = moveConfig.AirControl;
-		_rigidbody.gravityScale = moveConfig.GravityScale;
-		airResistance = moveConfig.AirResistance;
-	}
-
-	private void Update()
+    private void Update()
 	{
 		grounded = false;
 
@@ -70,6 +60,16 @@ public class MoveController : MonoBehaviour
 			isFalling = false;
 			PlayerFalling?.Invoke(isFalling);
 		}
+	}
+
+	public void SetConfig(MoveConfig moveConfig)
+	{
+		fallingThreshold = moveConfig.FallingThreshold;
+		jumpForce = moveConfig.JumpForce;
+		movementSmoothing = moveConfig.MovementSmoothing;
+		airControl = moveConfig.AirControl;
+		_rigidbody.gravityScale = moveConfig.GravityScale;
+		airResistance = moveConfig.AirResistance;
 	}
 
 	public void Move(float inputMove)

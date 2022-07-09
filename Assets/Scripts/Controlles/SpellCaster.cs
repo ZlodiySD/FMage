@@ -32,6 +32,9 @@ public class SpellCaster
 
     private void SetAciveSphere(MagicSphereConfig magicSphere)
     {
+        if(activeSphere != null)
+            activeSphere.PassiveSpell.DisapplySpell();
+
         activeSphere = magicSphere;
 
         if (activeSphere.PassiveSpell)
