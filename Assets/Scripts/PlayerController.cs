@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerConfigs playerConfigs;
 
+    [SerializeField]
+    private Animator animator;
+
     private void Awake()
     {
         SetConfigs();
