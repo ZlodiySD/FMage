@@ -17,7 +17,7 @@ MonoBehaviour:
     JumpForce: 600
     MovementSmoothing: 0
     AirControl: 1
-    AirResistance: 0.294
+    AirResistance: 0
     GravityScale: 3.6
   spellsHolderConfig:
     MaxSpellsCount: 2
