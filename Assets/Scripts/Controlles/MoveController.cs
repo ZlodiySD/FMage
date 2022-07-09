@@ -19,8 +19,7 @@ public class MoveController : MonoBehaviour
 
 	private float fallingThreshold;
 
-	[SerializeField]
-	private LayerMask GroundLayer;
+	private LayerMask GroundLayer = GameLayers.Ground;
 	[SerializeField]
 	private Transform groundCheck;
 
