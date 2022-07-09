@@ -8,6 +8,6 @@ public class MagicSphereConfig : ScriptableObject
     public string magicShpereName;
     public float pickUpRadius;
 
-    public MagicSpell primaryMagicSpell;
-    public MagicSpell secondaryMagicSpell;
+    public ActiveSpell ActiveSpell;
+    public PassiveSpell PassiveSpell;
 }

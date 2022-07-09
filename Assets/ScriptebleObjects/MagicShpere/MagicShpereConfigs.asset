@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19872a9f7e45fac40aeaa939319a67bd, type: 3}
-  m_Name: AirSphere
+  m_Script: {fileID: 11500000, guid: a76d90bbe767879418abdf7ed02764b2, type: 3}
+  m_Name: MagicShpereConfigs
   m_EditorClassIdentifier: 
   magicShpereName: AirSphere
   pickUpRadius: 2
-  primaryMagicSpell: {fileID: 0}
-  secondaryMagicSpell: {fileID: 8573743441055136924, guid: 9e1d7d32786cc364693630e66d2fb47d, type: 3}
+  ActiveSpell: {fileID: 0}
+  PassiveSpell: {fileID: 0}

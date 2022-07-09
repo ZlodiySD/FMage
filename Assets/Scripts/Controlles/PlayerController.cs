@@ -27,6 +27,17 @@ public class PlayerController : MonoBehaviour
 
         sphereHolder.SphereCountMaxed += SphereHolder_SphereCountMaxed;
     }
+    public PlayerConfigs GetConfigs() => playerConfigs;
+
+    public void SetGravityScale(float gravityScale)
+    {
+        moveController._rigidbody.gravityScale = gravityScale;
+    }
+
+    public void ResetGravityScale()
+    {
+        moveController._rigidbody.gravityScale = playerConfigs.moveConfig.GravityScale;
+    }
 
     private void SphereHolder_SphereCountMaxed(MagicSphereConfig obj)
     {
@@ -55,7 +66,7 @@ public class PlayerController : MonoBehaviour
         bool isSecondaryCast = Input.GetKeyDown(KeyCode.Mouse1);
 
         if (isSecondaryCast)
-            spellCaster.CastSpell(SpellType.Secondary, OnSpellCasted);
+            spellCaster.CastSpell(OnSpellCasted);
     }
 
     private void OnSpellCasted(MagicSphereConfig magicSphereConfig, SpellType spellType)

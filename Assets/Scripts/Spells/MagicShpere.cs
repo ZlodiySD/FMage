@@ -17,11 +17,11 @@ public class MagicShpere : MonoBehaviour
 
     public void SetCaster(GameObject caster)
     {
-        if(magicShpereConfig.primaryMagicSpell)
-            magicShpereConfig.primaryMagicSpell.SetCaster(caster);
+        if(magicShpereConfig.ActiveSpell)
+            magicShpereConfig.ActiveSpell.SetCaster(caster);
 
-        if (magicShpereConfig.secondaryMagicSpell)
-            magicShpereConfig.secondaryMagicSpell.SetCaster(caster);
+        if (magicShpereConfig.PassiveSpell)
+            magicShpereConfig.PassiveSpell.SetCaster(caster);
     }
 
     public void DestroySphere()

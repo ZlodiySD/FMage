@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DoubleJumpSpell : MagicSpell
+public class DoubleJumpSpell : ActiveSpell
 {
     [Header("If true jumpforce will ignored")]
     public bool UsePlayerJumpForce;
@@ -10,9 +10,9 @@ public class DoubleJumpSpell : MagicSpell
     public override void CastSpell()
     {
         if(!UsePlayerJumpForce)
-            spellCaster.GetComponent<MoveController>().PerformJump(jumpForce, true);
+            SpellCaster.GetComponent<MoveController>().PerformJump(jumpForce, true);
         else
-            spellCaster.GetComponent<MoveController>().PerformJump(true);
+            SpellCaster.GetComponent<MoveController>().PerformJump(true);
     }
 }
 

@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
 {
+	public Rigidbody2D _rigidbody;
+
 	private float jumpForce;
 	private float movementSmoothing;
 	private bool airControl = false;
@@ -18,14 +20,8 @@ public class MoveController : MonoBehaviour
 
     const float groundedRadius = .2f;
 	private bool grounded;
-	private Rigidbody2D _rigidbody;
 	private bool facingRight = true;
 	private Vector3 velocity = Vector3.zero;
-
-	private void Awake()
-	{
-		_rigidbody = GetComponent<Rigidbody2D>();
-	}
 
     private void OnDrawGizmos()
     {
