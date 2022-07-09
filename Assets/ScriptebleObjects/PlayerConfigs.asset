@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: PlayerConfigs
   m_EditorClassIdentifier: 
   moveConfig:
-    MovementSpeed: 1
+    MovementSpeed: 10
     JumpForce: 600
     MovementSmoothing: 0
     AirControl: 1
+    AirResistance: 0.294
     GravityScale: 3.6
   spellsHolderConfig:
     MaxSpellsCount: 2
