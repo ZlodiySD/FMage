@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TestScript : MonoBehaviour
 {
 #if UNITY_EDITOR
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private void OnGUI()
     {
         var reloadConfigText = "Reload Player Config";
