@@ -5,11 +5,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
+
 {
 	private float jumpForce;
 	private float movementSmoothing;
 	private bool airControl = false;
 	private float airResistance;
+	public Animator animator;
 
 	[SerializeField]
 	private LayerMask GroundLayer;
