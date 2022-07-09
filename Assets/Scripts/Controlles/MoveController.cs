@@ -5,6 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
+
 {
 	public Rigidbody2D _rigidbody;
 
@@ -12,6 +13,7 @@ public class MoveController : MonoBehaviour
 	private float movementSmoothing;
 	private bool airControl = false;
 	private float airResistance;
+	public Animator animator;
 
 	[SerializeField]
 	private LayerMask GroundLayer;
