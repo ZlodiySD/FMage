@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveConfig:
     MovementSpeed: 1
-    JumpForce: 500
+    JumpForce: 600
     MovementSmoothing: 0
     AirControl: 1
-    GravityScale: 3
+    GravityScale: 3.6
