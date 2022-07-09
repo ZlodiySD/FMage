@@ -12,9 +12,6 @@ public class PlayerController : MonoBehaviour
     private PlayerConfigs playerConfigs;
 
     [SerializeField]
-    private Animator animator;
-
-    [SerializeField]
     private SphereHolder sphereHolder;
 
     private SpellCaster spellCaster;
