@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerConfigs
   m_EditorClassIdentifier: 
   moveConfig:
+    FallingThreshold: -1
     MovementSpeed: 10
     JumpForce: 600
     MovementSmoothing: 0
