@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9630d6ace95ad054aa4004bcc3422099, type: 3}
   m_Name: PlayerConfigs
   m_EditorClassIdentifier: 
-  MovementSpeed: 0
-  JumpForce: 0
-  MovementSmoothing: 0
-  AirControl: 0
-  PlayerGravity: 0
+  moveConfig:
+    MovementSpeed: 1
+    JumpForce: 500
+    MovementSmoothing: 0
+    AirControl: 1
+    GravityScale: 3
