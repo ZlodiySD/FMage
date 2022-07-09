@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnSpellCasted(MagicSphereConfig magicSphereConfig, SpellType spellType)
     {
-        //sphereHolder.RemoveSphere(magicSphereConfig);
+        sphereHolder.RemoveSphere(magicSphereConfig);
     }
 
     private void GetMoveIput()
