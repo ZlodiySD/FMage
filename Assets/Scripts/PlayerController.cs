@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         SetConfigs();
+
+        sphereHolder.SphereCountMaxed += SphereHolder_SphereCountMaxed;
+    }
+
+    private void SphereHolder_SphereCountMaxed(MagicSphereConfig obj)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void SetConfigs()
