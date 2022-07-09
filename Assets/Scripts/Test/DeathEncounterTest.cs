@@ -11,11 +11,9 @@ public class DeathEncounterTest : MonoBehaviour
         Debug.LogWarning("Hey, I'm test script");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(other.gameObject.TryGetComponent(out PlayerController player))
-        {
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 }
