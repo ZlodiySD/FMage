@@ -6,19 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
 {
-	[HideInInspector]
-	public float jumpForce = 400f;
-	[HideInInspector]
-	public float movementSmoothing = .05f;
-	[HideInInspector]
-	public bool airControl = false;
+	private float jumpForce;
+	private float movementSmoothing;
+	private bool airControl = false;
+	private float airResistance;
 
 	[SerializeField]
 	private LayerMask GroundLayer;
 	[SerializeField]
 	private Transform groundCheck;
 
-    const float groundedRadius = .5f;
+    const float groundedRadius = .2f;
 	private bool grounded;
 	private Rigidbody2D _rigidbody;
 	private bool facingRight = true;
@@ -29,12 +27,19 @@ public class MoveController : MonoBehaviour
 		_rigidbody = GetComponent<Rigidbody2D>();
 	}
 
-	public void SetConfig(MoveConfig moveConfig)
+    private void OnDrawGizmos()
+    {
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(groundCheck.position, groundedRadius);
+    }
+
+    public void SetConfig(MoveConfig moveConfig)
 	{
 		jumpForce = moveConfig.JumpForce;
 		movementSmoothing = moveConfig.MovementSmoothing;
 		airControl = moveConfig.AirControl;
 		_rigidbody.gravityScale = moveConfig.GravityScale;
+		airResistance = moveConfig.AirResistance;
 	}
 
 	private void Update()
@@ -51,22 +56,25 @@ public class MoveController : MonoBehaviour
 		}
 	}
 
-	public void Move(float move)
+	public void Move(float inputMove)
     {
         if (grounded || airControl)
         {
-            Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody.velocity.y);
-            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, movementSmoothing);
+			Vector3 targetVelocity = new Vector2(inputMove, _rigidbody.velocity.y);
 
-            if (move > 0 && !facingRight)
-            {
+			float smoothValue = movementSmoothing;
+
+			if (!grounded && airControl)
+				smoothValue += airResistance;
+
+			_rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, smoothValue); ;
+
+
+			if (inputMove > 0 && !facingRight)
                 Flip();
-            }
-            else if (move < 0 && facingRight)
-            {
+            else if (inputMove < 0 && facingRight)
                 Flip();
-            }
-        }
+		}
     }
 
     public void PerformJump(bool ignoreGround = false)
@@ -82,9 +90,6 @@ public class MoveController : MonoBehaviour
 			_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
 
 			_rigidbody.AddForce(new Vector2(0f, _jumpForce));
-			//float currentSpeed = _rigidbody.velocity.magnitude;
-			//float actualForce = _jumpForce * (1 - currentSpeed / _jumpForce);
-			//_rigidbody.AddForce(new Vector2(0f, actualForce));
 		}
 	}
 
