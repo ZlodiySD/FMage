@@ -7,4 +7,6 @@ using UnityEngine;
 public class PlayerConfigs : ScriptableObject
 {
     public MoveConfig moveConfig;
+
+    public SpellsHolderConfig spellsHolderConfig;
 }

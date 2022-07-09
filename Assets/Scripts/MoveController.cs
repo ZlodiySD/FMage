@@ -18,7 +18,7 @@ public class MoveController : MonoBehaviour
 	[SerializeField]
 	private Transform groundCheck;
 
-    const float groundedRadius = .2f;
+    const float groundedRadius = .5f;
 	private bool grounded;
 	private Rigidbody2D _rigidbody;
 	private bool facingRight = true;
@@ -39,7 +39,8 @@ public class MoveController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = grounded;
+		//_rigidbody.velocity = Vector3.ClampMagnitude(_rigidbody.velocity, jumpForce);
+
 		grounded = false;
 
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, GroundLayer);
@@ -52,30 +53,42 @@ public class MoveController : MonoBehaviour
 		}
 	}
 
-	public void Move(float move, bool jump)
-	{
-		if (grounded || airControl)
-		{
+	public void Move(float move)
+    {
+        if (grounded || airControl)
+        {
+            Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody.velocity.y);
+            _rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-			Vector3 targetVelocity = new Vector2(move * 10f, _rigidbody.velocity.y);
-			_rigidbody.velocity = Vector3.SmoothDamp(_rigidbody.velocity, targetVelocity, ref velocity, movementSmoothing);
+            if (move > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (move < 0 && facingRight)
+            {
+                Flip();
+            }
+        }
+    }
 
-			if (move > 0 && !facingRight)
-			{
-				Flip();
-			}
-			else if (move < 0 && facingRight)
-			{
-				Flip();
-			}
-		}
-		if (grounded && jump)
-		{
-			grounded = false;
-			_rigidbody.AddForce(new Vector2(0f, jumpForce));
-		}
+    public void PerformJump(bool ignoreGround = false)
+    {
+		PerformJump(jumpForce, ignoreGround);
 	}
 
+	public void PerformJump(float _jumpForce, bool ignoreGround = false)
+	{
+		if (grounded || ignoreGround)
+		{
+			grounded = false;
+			_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
+
+			_rigidbody.AddForce(new Vector2(0f, _jumpForce));
+			//float currentSpeed = _rigidbody.velocity.magnitude;
+			//float actualForce = _jumpForce * (1 - currentSpeed / _jumpForce);
+			//_rigidbody.AddForce(new Vector2(0f, actualForce));
+		}
+	}
 
 	private void Flip()
 	{

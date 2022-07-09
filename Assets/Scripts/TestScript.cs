@@ -16,7 +16,7 @@ public class TestScript : MonoBehaviour
 
         Vector2 size = style.CalcSize(content);
 
-        if (GUI.Button(new Rect(100,50, size.x, size.y), reloadConfigText))
+        if (GUI.Button(new Rect(50, 25, size.x, size.y), reloadConfigText))
         {
             FindObjectOfType<PlayerController>().SetConfigs();
         }

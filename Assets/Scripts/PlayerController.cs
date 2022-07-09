@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,6 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    [SerializeField]
+    private SphereHolder sphereHolder;
+
+    private SpellCaster spellCaster;
+
+    private bool isJump;
+
     private void Awake()
     {
         SetConfigs();
@@ -22,26 +28,46 @@ public class PlayerController : MonoBehaviour
     public void SetConfigs()
     {
         moveController.SetConfig(playerConfigs.moveConfig);
+
+        sphereHolder.SetConfig(playerConfigs.spellsHolderConfig);
+
+        spellCaster = new SpellCaster(sphereHolder);
     }
 
     void FixedUpdate()
     {
         GetMoveIput();
+        GetCastInput();
+    }
+    private void GetCastInput()
+    {
+        if (isJump)
+            return;
+
+        bool isSecondaryCast = Input.GetKeyDown(KeyCode.Mouse1);
+
+        if (isSecondaryCast)
+            spellCaster.CastSpell(SpellType.Secondary, OnSpellCasted);
+    }
+
+    private void OnSpellCasted(MagicSphereConfig magicSphereConfig, SpellType spellType)
+    {
+        //sphereHolder.RemoveSphere(magicSphereConfig);
     }
 
     private void GetMoveIput()
     {
         var horizontal = Input.GetAxis("Horizontal");
-        bool isJump = Input.GetAxis("Jump") > 0;
+        isJump = Input.GetKeyDown(KeyCode.Space);
 
         if (horizontal != 0)
         {
-            moveController.Move(horizontal * playerConfigs.moveConfig.MovementSpeed, isJump);
+            moveController.Move(horizontal * playerConfigs.moveConfig.MovementSpeed);
         }
         else
-        {
-            if(isJump)
-                moveController.Move(0, isJump);
-        }
+            moveController.Move(0);
+
+        if (isJump)
+            moveController.PerformJump();
     }
 }
