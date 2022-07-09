@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8280636105281750140}
   - component: {fileID: 2049152322}
   m_Layer: 7
-  m_Name: MagicSphere
+  m_Name: AirSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

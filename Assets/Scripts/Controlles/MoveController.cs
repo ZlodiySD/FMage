@@ -5,8 +5,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class MoveController : MonoBehaviour
-
 {
+	public event Action<bool> PlayerFalling;
+	public event Action PlayerFallingFinished;
+
 	public Rigidbody2D _rigidbody;
 
 	private float jumpForce;
@@ -14,6 +16,8 @@ public class MoveController : MonoBehaviour
 	private bool airControl = false;
 	private float airResistance;
 	public Animator animator;
+
+	private float fallingThreshold;
 
 	[SerializeField]
 	private LayerMask GroundLayer;
@@ -25,6 +29,8 @@ public class MoveController : MonoBehaviour
 	private bool facingRight = true;
 	private Vector3 velocity = Vector3.zero;
 
+	private bool isFalling = false;
+
     private void OnDrawGizmos()
     {
 		Gizmos.color = Color.red;
@@ -33,6 +39,7 @@ public class MoveController : MonoBehaviour
 
     public void SetConfig(MoveConfig moveConfig)
 	{
+		fallingThreshold = moveConfig.FallingThreshold;
 		jumpForce = moveConfig.JumpForce;
 		movementSmoothing = moveConfig.MovementSmoothing;
 		airControl = moveConfig.AirControl;
@@ -51,6 +58,17 @@ public class MoveController : MonoBehaviour
 			{
 				grounded = true;
 			}
+		}
+
+		if (_rigidbody.velocity.y < fallingThreshold && !isFalling)
+		{
+			isFalling = true;
+			PlayerFalling?.Invoke(isFalling);
+		}
+		else if(_rigidbody.velocity.y > fallingThreshold && isFalling)
+		{
+			isFalling = false;
+			PlayerFalling?.Invoke(isFalling);
 		}
 	}
 

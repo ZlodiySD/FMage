@@ -14,7 +14,7 @@ public class SphereHolder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == GameLayers.Interacteble)
+       if (collision.gameObject.layer == GameLayers.Interacteble)
         {
             if (collision.gameObject.TryGetComponent(out MagicShpere magicShpere))
             {

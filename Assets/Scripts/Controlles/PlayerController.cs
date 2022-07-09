@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private MoveController moveController;
+    public MoveController moveController;
+
+    public SphereHolder sphereHolder;
 
     [SerializeField]
     private PlayerConfigs playerConfigs;
-
-    [SerializeField]
-    private SphereHolder sphereHolder;
 
     private SpellCaster spellCaster;
 

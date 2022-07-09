@@ -4,6 +4,10 @@ using UnityEngine;
 [Serializable]
 public class MoveConfig
 {
+    [Tooltip("Falling speed value after which the player enters the falling state")]
+    [Range(-10f, 0)]
+    public float FallingThreshold;
+
     public float MovementSpeed;
     public float JumpForce;
 
