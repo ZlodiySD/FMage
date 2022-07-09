@@ -18,3 +18,5 @@ MonoBehaviour:
     MovementSmoothing: 0
     AirControl: 1
     GravityScale: 3.6
+  spellsHolderConfig:
+    MaxSpellsCount: 2
