@@ -99,4 +99,11 @@ public class UIManager : MonoBehaviour
         if (activeView)
             activeView.Hide();
     }
+
+    public void DisplayTime(TimeSpan time)
+    {
+        string str = time.ToString(@"mm\:ss\:fff");
+
+        Debug.Log(str);
+    }
 }

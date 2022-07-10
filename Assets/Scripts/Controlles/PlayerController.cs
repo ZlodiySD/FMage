@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource audioSource;
 
+    private bool isTimerStarted = false;
+
     private void Awake()
     {
         SetConfigs();
@@ -100,6 +102,13 @@ public class PlayerController : MonoBehaviour
     {
         var horizontal = Input.GetAxis("Horizontal");
         isJump = Input.GetKeyDown(KeyCode.Space);
+
+        if (isJump || horizontal != 0)
+            if (!isTimerStarted)
+            {
+                isTimerStarted = true;
+                GameManager.Instance.StartTimer();
+            }
 
         if (horizontal != 0)
         {

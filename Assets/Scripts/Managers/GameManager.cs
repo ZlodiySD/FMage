@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameState GameState { get; private set; }
 
+    private Timer timer;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -30,8 +32,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         DontDestroyOnLoad(gameObject);
+
+        timer = new Timer();
     }
 
     public void RestartLevel()
@@ -84,11 +87,20 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
+    public void StartTimer()
+    {
+        timer.StartTimer();
+    }
+
     public void LevelEnd()
     {
         ChangeGameState(GameState.Stop);
 
         AudioManager.Instance.PlayClip("stone move 1");
+
+        var time = timer.StopTimer();
+        UIManager.Instance.DisplayTime(time);
+
 
         if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
         {
