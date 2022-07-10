@@ -10,6 +10,15 @@ public class GameManager : MonoBehaviour
 
     public GameState GameState { get; private set; }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            RestartLevel();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            LevelEnd();
+    }
+
     private void Awake()
     {
         if (Instance == null)
@@ -68,6 +77,13 @@ public class GameManager : MonoBehaviour
     public void LevelEnd()
     {
         ChangeGameState(GameState.Stop);
+
+        if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            UIManager.Instance.SetActiveView("GameEnd");
+            return;
+        }
+
         UIManager.Instance.SetActiveView("LevelEnd");
     }
 
