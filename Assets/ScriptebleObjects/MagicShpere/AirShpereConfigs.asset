@@ -16,3 +16,4 @@ MonoBehaviour:
   pickUpRadius: 2
   ActiveSpell: {fileID: 8573743441055136924, guid: 9e1d7d32786cc364693630e66d2fb47d, type: 3}
   PassiveSpell: {fileID: 6336510926032779629, guid: 6cfe8b0f7dfe77a41b43d2dbe48dd277, type: 3}
+  sphereAnimation: {fileID: 8280636105281750019, guid: 61aabb803e58f074983c216f575a23ba, type: 3}

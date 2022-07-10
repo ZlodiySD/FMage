@@ -94,11 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8280636105281750141}
   - component: {fileID: 8280636105281750018}
-  - component: {fileID: 8280636105281750140}
-  - component: {fileID: 2049152322}
-  - component: {fileID: 1468011083}
+  - component: {fileID: -4459590919604672583}
   m_Layer: 7
-  m_Name: StoneSphere
+  m_Name: StoneSpherePreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,8 +110,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8280636105281750019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15, y: 0.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7204529325496970740}
@@ -172,38 +170,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8280636105281750140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280636105281750019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b108f235d9adb5d429f26e223adb304c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magicShpereConfig: {fileID: 11400000, guid: 5b60569ed5536e141a76e46030fa0e3e, type: 2}
-  circleCollider: {fileID: 2049152322}
-  radiusIndicator: {fileID: 8261331506110904903}
---- !u!58 &2049152322
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8280636105281750019}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
---- !u!95 &1468011083
+--- !u!95 &-4459590919604672583
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class SpellCaster
 
     private void SetAciveSphere(MagicSphereConfig magicSphere)
     {
-        if (activeSphere != null)
+        if(activeSphere != null)
         {
             activeSphere.PassiveSpell.DisapplySpell();
             secondSphere = activeSphere;

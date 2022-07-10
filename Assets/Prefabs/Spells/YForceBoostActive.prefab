@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4248215487274343069}
   - component: {fileID: -4301295518296748510}
   m_Layer: 0
-  m_Name: GravityScaleActive
+  m_Name: YForceBoostActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491ad81abdae77e479351aaefdbd1373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityChangeValue: 12
+  BoostForce: -1000

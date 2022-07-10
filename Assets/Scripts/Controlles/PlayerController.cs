@@ -71,8 +71,8 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIndicator()
     {
-        indicator = Instantiate(indicatorPrefab, transform);
-        indicator.Init(sphereHolder, spellCaster);
+        indicator = Instantiate(indicatorPrefab);
+        indicator.Init(sphereHolder);
     }
 
     private void GetCastInput()
