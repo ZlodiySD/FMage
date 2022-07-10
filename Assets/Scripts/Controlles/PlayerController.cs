@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public MoveController moveController;
 
     public SphereHolder sphereHolder;
+    public PlayerBuffs playerBuffs;
+    public SphereHolderIndicator indicatorPrefab;
 
     [SerializeField]
     private PlayerConfigs playerConfigs;
@@ -16,14 +18,26 @@ public class PlayerController : MonoBehaviour
 
     private bool isJump;
 
-    public PlayerBuffs playerBuffs;
-
+    private SphereHolderIndicator indicator;
+    
     private void Awake()
     {
         SetConfigs();
         playerBuffs = new PlayerBuffs();
         sphereHolder.SphereCountMaxed += SphereHolder_SphereCountMaxed;
     }
+
+    private void Start()
+    {
+        CheckIndicator();
+    }
+
+    private void Update()
+    {
+        GetMoveIput();
+        GetCastInput();
+    }
+
     public PlayerConfigs GetConfigs() => playerConfigs;
 
     public void SetGravityScale(float gravityScale)
@@ -55,11 +69,12 @@ public class PlayerController : MonoBehaviour
         spellCaster = new SpellCaster(sphereHolder);
     }
 
-    void Update()
+    private void CheckIndicator()
     {
-        GetMoveIput();
-        GetCastInput();
+        indicator = Instantiate(indicatorPrefab, transform);
+        indicator.Init(sphereHolder, spellCaster);
     }
+
     private void GetCastInput()
     {
         if (isJump)

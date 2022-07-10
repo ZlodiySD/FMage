@@ -8,7 +8,8 @@ public class SpellCaster
 
     private SphereHolder sphereHolder;
 
-    private MagicSphereConfig activeSphere;
+    public MagicSphereConfig activeSphere;
+    public MagicSphereConfig secondSphere;
 
     public SpellCaster(SphereHolder spellsHolder)
     {
@@ -33,8 +34,13 @@ public class SpellCaster
 
     private void SetAciveSphere(MagicSphereConfig magicSphere)
     {
-        if(activeSphere != null)
+        if (activeSphere != null)
+        {
             activeSphere.PassiveSpell.DisapplySpell();
+            secondSphere = activeSphere;
+        }
+        else
+            secondSphere = null;
 
         activeSphere = magicSphere;
 
@@ -43,31 +49,6 @@ public class SpellCaster
 
         SphereChanged?.Invoke(activeSphere);
     }
-
-    //public void CastSpell(SpellType spellType, Action<MagicSphereConfig, SpellType> SpellCasted)
-    //{
-    //    if (!activeSphere)
-    //        return;
-
-    //    switch (spellType)
-    //    {
-    //        case SpellType.Primary:
-    //            if (!activeSphere.ActiveSpell)
-    //                return;
-    //            activeSphere.ActiveSpell.CastSpell();
-    //            Debug.Log("Spell casted: " + activeSphere.ActiveSpell.SpellName);
-    //            break;
-
-    //        case SpellType.Secondary:
-    //            if (!activeSphere.PassiveSpell)
-    //                return;
-    //            activeSphere.ActiveSpell.CastSpell();
-    //            Debug.Log("Spell casted: " + activeSphere.PassiveSpell.SpellName);
-    //            break;
-    //    }
-
-    //    SpellCasted?.Invoke(activeSphere, spellType);
-    //}
 
     public void CastSpell(Action<MagicSphereConfig, SpellType> SpellCasted)
     {

@@ -10,4 +10,6 @@ public class MagicSphereConfig : ScriptableObject
 
     public ActiveSpell ActiveSpell;
     public PassiveSpell PassiveSpell;
+
+    public GameObject sphereAnimation;
 }

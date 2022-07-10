@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveController: {fileID: 7989965154535510445}
   sphereHolder: {fileID: 76634218445666185}
+  indicatorPrefab: {fileID: 6775811242755436285, guid: 3f6895fb2b985864c84eebbef6a34290, type: 3}
   playerConfigs: {fileID: 11400000, guid: e7ee9348257f4514daab8acfb9bd15c2, type: 2}
 --- !u!114 &7989965154535510445
 MonoBehaviour:
