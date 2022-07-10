@@ -25,6 +25,6 @@ public class WinFlag : MonoBehaviour
 
     public void TriggerWin()
     {
-        GameManager.Instance.LevelWin();
+        GameManager.Instance.LevelEnd();
     }
 }
