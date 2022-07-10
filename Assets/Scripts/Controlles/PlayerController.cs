@@ -16,10 +16,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isJump;
 
+    public PlayerBuffs playerBuffs;
+
     private void Awake()
     {
         SetConfigs();
-
+        playerBuffs = new PlayerBuffs();
         sphereHolder.SphereCountMaxed += SphereHolder_SphereCountMaxed;
     }
     public PlayerConfigs GetConfigs() => playerConfigs;
@@ -29,6 +31,11 @@ public class PlayerController : MonoBehaviour
         moveController._rigidbody.gravityScale = gravityScale;
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void ResetGravityScale()
     {
         moveController._rigidbody.gravityScale = playerConfigs.moveConfig.GravityScale;
@@ -36,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private void SphereHolder_SphereCountMaxed(MagicSphereConfig obj)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Die();
     }
 
     public void SetConfigs()

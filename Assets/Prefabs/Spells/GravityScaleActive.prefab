@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491ad81abdae77e479351aaefdbd1373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityChangeValue: 25
+  GravityChangeValue: 12

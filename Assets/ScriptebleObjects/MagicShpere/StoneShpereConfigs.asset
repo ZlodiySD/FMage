@@ -15,4 +15,4 @@ MonoBehaviour:
   magicShpereName: StoneSphere
   pickUpRadius: 2
   ActiveSpell: {fileID: -4301295518296748510, guid: b3a6e555009b93143977311dc6f27e64, type: 3}
-  PassiveSpell: {fileID: 0}
+  PassiveSpell: {fileID: 5276520049929436706, guid: 78d4e406d04b83045afc743bcaafa63c, type: 3}
