@@ -7,15 +7,25 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
 	public event Action<bool> PlayerFalling;
-	public event Action PlayerFallingFinished;
+	public event Action<bool> GroundedChanged;
 
 	public Rigidbody2D _rigidbody;
+	public Animator animator;
+
+	public bool IsGounded 
+	{
+		get => grounded;
+		private set 
+		{
+			grounded = value;
+			GroundedChanged?.Invoke(grounded);
+		}
+	}
 
 	private float jumpForce;
 	private float movementSmoothing;
 	private bool airControl = false;
 	private float airResistance;
-	public Animator animator;
 
 	private float fallingThreshold;
 
@@ -25,7 +35,7 @@ public class MoveController : MonoBehaviour
 	private Transform groundCheck;
 
     const float groundedRadius = .2f;
-	private bool grounded;
+	private bool grounded = false;
 	private bool facingRight = true;
 	private Vector3 velocity = Vector3.zero;
 
@@ -38,31 +48,36 @@ public class MoveController : MonoBehaviour
     }
 
     private void Update()
+    {
+        GroundCheck();
+
+        if (_rigidbody.velocity.y < fallingThreshold && !isFalling)
+        {
+            isFalling = true;
+            PlayerFalling?.Invoke(isFalling);
+        }
+        else if (_rigidbody.velocity.y > fallingThreshold && isFalling)
+        {
+            isFalling = false;
+            PlayerFalling?.Invoke(isFalling);
+        }
+    }
+
+    private void GroundCheck()
 	{
-		grounded = false;
+		IsGounded = false;
 
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, GroundLayer);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				grounded = true;
-			}
-		}
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject != gameObject)
+            {
+				IsGounded = true;
+            }
+        }
+    }
 
-		if (_rigidbody.velocity.y < fallingThreshold && !isFalling)
-		{
-			isFalling = true;
-			PlayerFalling?.Invoke(isFalling);
-		}
-		else if(_rigidbody.velocity.y > fallingThreshold && isFalling)
-		{
-			isFalling = false;
-			PlayerFalling?.Invoke(isFalling);
-		}
-	}
-
-	public void SetConfig(MoveConfig moveConfig)
+    public void SetConfig(MoveConfig moveConfig)
 	{
 		fallingThreshold = moveConfig.FallingThreshold;
 		jumpForce = moveConfig.JumpForce;
