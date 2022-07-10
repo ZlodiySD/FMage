@@ -76,6 +76,10 @@ public class MoveController : MonoBehaviour
     {
         if (grounded || airControl)
         {
+			animator.SetFloat("Speed", Math.Abs(inputMove));
+
+			animator.SetBool("Ground", grounded);
+
 			Vector3 targetVelocity = new Vector2(inputMove, _rigidbody.velocity.y);
 
 			float smoothValue = movementSmoothing;
@@ -91,7 +95,7 @@ public class MoveController : MonoBehaviour
             else if (inputMove < 0 && facingRight)
                 Flip();
 		}
-    }
+	}
 
     public void PerformJump(bool ignoreGround = false)
     {
@@ -106,6 +110,8 @@ public class MoveController : MonoBehaviour
 			_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
 
 			_rigidbody.AddForce(new Vector2(0f, _jumpForce));
+
+			animator.SetTrigger("Jump");
 		}
 	}
 
