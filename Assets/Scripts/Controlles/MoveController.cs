@@ -73,6 +73,7 @@ public class MoveController : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
 				IsGounded = true;
+				_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
             }
         }
     }
