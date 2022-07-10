@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
         InitViews();
     }
 
+    public View GetActiveView() => activeView;
+
     public void ShowMainMenu()
     {
         GameManager.Instance.MainMenu();

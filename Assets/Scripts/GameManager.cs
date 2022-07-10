@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public event Action<GameState> GameStateChanged;
+
     public GameState GameState { get; private set; }
 
     private void Update()
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
+        ChangeGameState(GameState.MainMenu);
         SceneManager.LoadScene(0);
     }
 
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGameState(GameState state)
     {
+        if (state == GameState)
+            return;
+
         GameState = state;
         switch (state)
         {
@@ -61,11 +67,15 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0; 
                 break;
         }
+
+        GameStateChanged?.Invoke(GameState);
     }
 
     public void OnPlayerDeath()
     {
         ChangeGameState(GameState.Stop);
+
+        AudioManager.Instance.PlayClip("death");
         UIManager.Instance.SetActiveView("LooseScreen");
     }
 
@@ -77,6 +87,8 @@ public class GameManager : MonoBehaviour
     public void LevelEnd()
     {
         ChangeGameState(GameState.Stop);
+
+        AudioManager.Instance.PlayClip("stone move 1");
 
         if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
         {

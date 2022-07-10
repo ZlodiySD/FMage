@@ -1,5 +1,6 @@
 ﻿public enum GameState
 {
     Play,
-    Stop
+    Stop,
+    MainMenu
 }

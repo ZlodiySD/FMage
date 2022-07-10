@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     private bool isJump;
 
     private SphereHolderIndicator indicator;
-    
+
+    public AudioSource audioSource;
+
     private void Awake()
     {
         SetConfigs();
@@ -34,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameState != GameState.Play)
+            return;
+
         GetMoveIput();
         GetCastInput();
     }
@@ -104,6 +109,9 @@ public class PlayerController : MonoBehaviour
             moveController.Move(0);
 
         if (isJump)
+        {
             moveController.PerformJump();
+            AudioManager.Instance.PlayClipFromSource(audioSource, "jump");
+        }
     }
 }
