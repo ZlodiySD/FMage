@@ -21,7 +21,8 @@ public class SpellCaster
     {
         if(spheres.Count == 0)
         {
-            activeSphere.PassiveSpell.DisapplySpell();
+            if(activeSphere.PassiveSpell)
+                activeSphere.PassiveSpell.DisapplySpell();
             activeSphere = null;
             return;
         }

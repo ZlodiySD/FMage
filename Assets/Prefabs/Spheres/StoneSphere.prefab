@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8280636105281750140}
   - component: {fileID: 2049152322}
   m_Layer: 7
-  m_Name: MagicSphere
+  m_Name: StoneSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.13800192, b: 1, a: 1}
+  m_Color: {r: 0.33962262, g: 0.25133756, b: 0.22876467, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,10 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8280636105281750019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3bb72ca9ebda9340b674349a7437bb3, type: 3}
+  m_Script: {fileID: 11500000, guid: b108f235d9adb5d429f26e223adb304c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magicShpereConfig: {fileID: 11400000, guid: cbe32dd4aef60ba48b66f2b242628df0, type: 2}
+  magicShpereConfig: {fileID: 11400000, guid: 5b60569ed5536e141a76e46030fa0e3e, type: 2}
   circleCollider: {fileID: 2049152322}
 --- !u!58 &2049152322
 CircleCollider2D:
