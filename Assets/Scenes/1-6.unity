@@ -2649,11 +2649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e00
-      value: -2.3139958e-30
+      value: -2.3139386e-30
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e01
-      value: 4e-44
+      value: 1.4e-44
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e02
@@ -2669,7 +2669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e11
-      value: 0
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e12
@@ -2689,7 +2689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e22
-      value: -2.3139928e-30
+      value: -2.3139356e-30
       objectReference: {fileID: 0}
     - target: {fileID: 2532078631362877353, guid: 42e30eec45fbe924a823cbc8c8068b33, type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_Data.e23
