@@ -21,7 +21,6 @@ public class LevelEndView : View
 
     private void Awake()
     {
-
         btnNextLevel.onClick.AddListener(OnNextClicked);
         btnRetry.onClick.AddListener(OnRetryClicked);
         btnMain.onClick.AddListener(OnMainClick);
