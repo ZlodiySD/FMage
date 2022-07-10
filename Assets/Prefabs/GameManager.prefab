@@ -44,3 +44,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d8ce2a9850e7c4fb065a34c4dea75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelResultComparator:
+    levelConfigs:
+    - {fileID: 11400000, guid: b0923506fc84a02479a0bcbae6352a37, type: 2}
+    - {fileID: 11400000, guid: 0ce8727ae84ecb54198b8f9bd88c062e, type: 2}
+    - {fileID: 11400000, guid: 167b7559a3988414eb64f276bfd17748, type: 2}
+    - {fileID: 11400000, guid: cc5ae54b653947f43a0f4f6dfdbf5d37, type: 2}
+    - {fileID: 11400000, guid: 664c22389d637a24c92414498b1c4620, type: 2}
+    - {fileID: 11400000, guid: 43776741836ee874080ad7202dd4dde1, type: 2}
+    - {fileID: 11400000, guid: 9cdfe7d90376f09408bb2312c3bcc096, type: 2}
+    - {fileID: 11400000, guid: 33379dcb55ec38c42aaf949a06c2edde, type: 2}
+    - {fileID: 11400000, guid: a22b4ff35a04b3a4a8a49fcfcbd1be24, type: 2}
+    - {fileID: 11400000, guid: 781d8e47cd42b074eb9301cd7c6660d8, type: 2}
+    - {fileID: 11400000, guid: 867601837cb21e742b5dcdbf206c1aa8, type: 2}
+  messagerRandomizer:
+    teacherMessageConfigs:
+    - {fileID: 11400000, guid: 0c3ef46e0c3053948be999deef6bcd7e, type: 2}
+    - {fileID: 11400000, guid: b2176858e2f520e42ae1ff68a83446ac, type: 2}
+    - {fileID: 11400000, guid: bd3bbec7fe870f44d8cb750a520ce1c2, type: 2}
+    - {fileID: 11400000, guid: 4c76965006c927245838a92c93fdc944, type: 2}
+    - {fileID: 11400000, guid: 8075b73383892664a85b5e6fc41e9b86, type: 2}
+    - {fileID: 11400000, guid: f2b92a7dd18649d4bb84e01c419d8548, type: 2}
+    - {fileID: 11400000, guid: 5ae77a57cdf7a46469b68a2897806730, type: 2}
+    - {fileID: 11400000, guid: 0037a0a38651426449c6f55994e027c4, type: 2}
+    - {fileID: 11400000, guid: 50dc95f54d1e0df4689f476d40138ae9, type: 2}
+    - {fileID: 11400000, guid: 538ad3d930a6e204588109139e770044, type: 2}
+    - {fileID: 11400000, guid: 7fca51d1869f6f042b05d7efc8efde23, type: 2}

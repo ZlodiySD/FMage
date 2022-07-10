@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     private View activeView;
 
+    private string LevelTimel;
+
     public void Awake()
     {
         if (Instance == null)
@@ -29,11 +31,16 @@ public class UIManager : MonoBehaviour
 
     public View GetActiveView() => activeView;
 
+    public string GetLevelTime() => LevelTimel;
+
     public void ShowMainMenu()
     {
         GameManager.Instance.MainMenu();
         SetActiveView("Main");
     }
+
+    public LevelResultData GetLevelResult() => GameManager.Instance.GetLevelResultData();
+
 
     public void RetryLevel()
     {
@@ -104,6 +111,6 @@ public class UIManager : MonoBehaviour
     {
         string str = time.ToString(@"mm\:ss\:fff");
 
-        Debug.Log(str);
+        LevelTimel = str;
     }
 }

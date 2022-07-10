@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameState GameState { get; private set; }
 
     private Timer timer;
+    private TimeSpan levelTime;
+    public LevelResultComparator levelResultComparator;
+    public TeacherMessageChooser messagerRandomizer;
 
     private void Update()
     {
@@ -41,6 +44,22 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         ChangeGameState(GameState.Play);
+    }
+
+    public LevelResultData GetLevelResultData()
+    {
+        var levelId = SceneManager.GetActiveScene().buildIndex;
+        var grade = levelResultComparator.GetLevelGrade(levelId, levelTime.TotalSeconds);
+
+        var msg = messagerRandomizer.GetMessage(grade);
+
+        var data = new LevelResultData()
+        {
+            grade = grade,
+            teacherMessage = msg
+        };
+
+        return data;
     }
 
     public void MainMenu()
@@ -98,8 +117,8 @@ public class GameManager : MonoBehaviour
 
         AudioManager.Instance.PlayClip("stone move 1");
 
-        var time = timer.StopTimer();
-        UIManager.Instance.DisplayTime(time);
+        levelTime = timer.StopTimer();
+        UIManager.Instance.DisplayTime(levelTime);
 
 
         if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
