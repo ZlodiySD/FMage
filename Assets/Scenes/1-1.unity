@@ -2361,6 +2361,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1389023723429826568, guid: 68461d127ed0a4040b1d8cafe2e1f5ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5cc872b4b6d76c843a874e351f8323c4, type: 3}
+    - target: {fileID: 1389023723483730310, guid: 68461d127ed0a4040b1d8cafe2e1f5ce, type: 3}
+      propertyPath: m_text
+      value: "Welcome to the applied magic re-examination... Ah.. its you... What
+        is it? The fifth time ? Ok... \r\nLets start.\r\nEvery mage needs to be in
+        a <b>pristine physical condition</b>! Lets see how you can handle a small
+        obsticle course."
+      objectReference: {fileID: 0}
     - target: {fileID: 1389023723629084202, guid: 68461d127ed0a4040b1d8cafe2e1f5ce, type: 3}
       propertyPath: m_RootOrder
       value: 3
