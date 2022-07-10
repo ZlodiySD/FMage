@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-public class GravityChange : PassiveSpell
+public class GravityChangePassive : PassiveSpell
 {
     [Header("How much will gravity change")]
     [Range(0.1f, 10)]
     public float GravityChangeScale;
+
+    private PlayerGravityChanger playerGravityChanger = new PlayerGravityChanger();
 
     public override void ApplySpell()
     {
@@ -21,15 +23,12 @@ public class GravityChange : PassiveSpell
 
     private void ResetGravity()
     {
-        SpellCaster.GetComponent<PlayerController>().ResetGravityScale();
+        playerGravityChanger.ResetGravity(SpellCaster);
     }
 
     private void ChangeGravity()
     {
-        var player = SpellCaster.GetComponent<PlayerController>();
-        var newGravity = player.GetConfigs().moveConfig.GravityScale / GravityChangeScale;
-
-        player.SetGravityScale(newGravity);
+        playerGravityChanger.DivideGravity(SpellCaster, GravityChangeScale);
     }
 
     private void MoveController_PlayerFalling(bool isFalling)

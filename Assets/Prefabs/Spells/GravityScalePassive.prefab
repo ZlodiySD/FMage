@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 860402431530253456}
   - component: {fileID: 6336510926032779629}
   m_Layer: 0
-  m_Name: GravityScale
+  m_Name: GravityScalePassive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
