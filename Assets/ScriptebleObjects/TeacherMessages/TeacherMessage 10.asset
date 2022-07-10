@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TeacherMessage 10
   m_EditorClassIdentifier: 
   FGradeMessage: 'I dropping an <b><color="red">F<color="black"></b>-bomb.   '
-  PassGradeMessage: '"Step aside! There''s a winner! You won a pass. You <b><color=""green"">passed<color=""black""></b>."   '
+  PassGradeMessage: Step aside! There's a winner! You won a pass. You <b><color="green">passed<color="black"></b>.

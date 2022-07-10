@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TeacherMessage 11
   m_EditorClassIdentifier: 
   FGradeMessage: 'Your GPA is a <b><color="red">F<color="black"></b>ATALITY.   '
-  PassGradeMessage: '"State the purpose of your visit. What is it? ""Just passing""?
-    Well... You <b><color=""green"">passed<color=""black""></b>."   '
+  PassGradeMessage: 'State the purpose of your visit. What is it? "Just passing"?
+    Well... You <b><color="green">passed<color="black"></b>.   '

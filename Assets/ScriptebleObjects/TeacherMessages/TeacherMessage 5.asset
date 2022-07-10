@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d89e4801699854d8cff8491eee5406, type: 3}
   m_Name: TeacherMessage 5
   m_EditorClassIdentifier: 
-  FGradeMessage: '"If I would get a penny for every <b><color=""red"">F<color=""black""></b>
-    I gave you.... I would hire you a tutor..."    '
-  PassGradeMessage: '"Congratulation you not a total failure. You <b><color=""green"">passed<color=""black""></b>."    '
+  FGradeMessage: 'If I would get a penny for every <b><color="red">F<color="black"></b>
+    I gave you.... I would hire you a tutor..."   '
+  PassGradeMessage: 'Congratulation you not a total failure. You <b><color="green">passed<color="black"></b>.    '

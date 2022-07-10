@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d89e4801699854d8cff8491eee5406, type: 3}
   m_Name: TeacherMessage 2
   m_EditorClassIdentifier: 
-  FGradeMessage: '<b><color="red">F<color="black"></b> again.... As I thought...   '
+  FGradeMessage: <b><color="red">F<color="black"></b> again.... As I thought...
   PassGradeMessage: 'You <b><color="green">passed<color="black"></b>.... Who would
     of thought....   '

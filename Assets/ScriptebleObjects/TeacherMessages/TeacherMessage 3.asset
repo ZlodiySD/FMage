@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d89e4801699854d8cff8491eee5406, type: 3}
   m_Name: TeacherMessage 3
   m_EditorClassIdentifier: 
-  FGradeMessage: '"Once again....  Over optimal time.... You getting <b><color=""red"">F<color=""black""></b>..."   '
-  PassGradeMessage: '" You been practicing on your own? Whatever... You <b><color=""green"">passed<color=""black""></b>."   '
+  FGradeMessage: Once again....  Over optimal time.... You getting <b><color="red">F<color="black"></b>...
+  PassGradeMessage: You been practicing on your own? Whatever... You <b><color="green">passed<color="black"></b>.

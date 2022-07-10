@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d89e4801699854d8cff8491eee5406, type: 3}
   m_Name: TeacherMessage 7
   m_EditorClassIdentifier: 
-  FGradeMessage: '"<b><color=""red"">F<color=""black""></b>..................... 
-    All of your peers already graduated..... that''s pitty."   '
-  PassGradeMessage: '"You getting better at this. You <b><color=""green"">passed<color=""black""></b>."   '
+  FGradeMessage: '<b><color="red">F<color="black"></b>.....................  All
+    of your peers already graduated..... that''s pitty."   '
+  PassGradeMessage: You getting better at this. You <b><color="green">passed<color="black"></b>.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d89e4801699854d8cff8491eee5406, type: 3}
   m_Name: TeacherMessage 9
   m_EditorClassIdentifier: 
-  FGradeMessage: '"<b><color=""red"">F<color=""black""></b>. You are the most respected
-    man out there or what?"   '
+  FGradeMessage: <b><color="red">F<color="black"></b>. You are the most respected
+    man out there or what?
   PassGradeMessage: 'You <b><color="green">passed<color="black"></b>. Like a kidney
     stone through the urethra   '
