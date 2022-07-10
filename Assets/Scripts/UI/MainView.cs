@@ -10,7 +10,7 @@ public class MainView : View
     public Button btnSelectLevel;
     public Button btnCredits;
 
-    public void Awake()
+    private void Start()
     {
         btnPlay.onClick.AddListener(OnPlayClick);
         btnSelectLevel.onClick.AddListener(OnSelectClick);

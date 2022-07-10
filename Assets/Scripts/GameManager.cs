@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    public GameState GameState { get; private set; }
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,26 +26,54 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ChangeGameState(GameState.Play);
     }
 
-    internal void PlayLastLevel()
+    public void MainMenu()
     {
-        throw new NotImplementedException();
+        SceneManager.LoadScene(0);
+    }
+
+    public void PlayLastLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ChangeGameState(GameState.Play);
+    }
+
+    public void ChangeGameState(GameState state)
+    {
+        GameState = state;
+        switch (state)
+        {
+            case GameState.Play:
+                Time.timeScale = 1;
+                break;
+            case GameState.Stop:
+                Time.timeScale = 0; 
+                break;
+        }
     }
 
     public void OnPlayerDeath()
     {
-        //TEST
-        RestartLevel();
-        //TEST
+        ChangeGameState(GameState.Stop);
+        UIManager.Instance.SetActiveView("LooseScreen");
     }
 
-    public void LevelWin()
+    public List<LevelData> GetLevelsData()
     {
-        Debug.Log("You win!");
+        return null;
+    }
 
-        //TEST
-        RestartLevel();
-        //TEST
+    public void LevelEnd()
+    {
+        ChangeGameState(GameState.Stop);
+        UIManager.Instance.SetActiveView("LevelEnd");
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ChangeGameState(GameState.Play);
     }
 }

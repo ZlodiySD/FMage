@@ -14,7 +14,6 @@ public abstract class View : MonoBehaviour, IView
 
     public virtual void Show()
     {
-        uiManager.SetActiveView(this);
         gameObject.SetActive(true);
     }
 }
