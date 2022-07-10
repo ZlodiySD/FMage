@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.OnPlayerDeath();
     }
 
     public void ResetGravityScale()
