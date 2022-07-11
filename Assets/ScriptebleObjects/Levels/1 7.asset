@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1 7
   m_EditorClassIdentifier: 
   LevelID: 7
-  levelPassTimeInSeconds: 0
+  levelPassTimeInSeconds: 6
