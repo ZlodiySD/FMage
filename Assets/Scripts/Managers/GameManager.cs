@@ -21,9 +21,10 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             RestartLevel();
-
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Escape))
             LevelEnd();
+#endif
     }
 
     private void Awake()
@@ -120,18 +121,17 @@ public class GameManager : MonoBehaviour
         levelTime = timer.StopTimer();
         UIManager.Instance.DisplayTime(levelTime);
 
+        UIManager.Instance.SetActiveView("LevelEnd");
+    }
 
+    public void NextLevel()
+    {
         if (SceneManager.sceneCountInBuildSettings <= SceneManager.GetActiveScene().buildIndex + 1)
         {
             UIManager.Instance.SetActiveView("GameEnd");
             return;
         }
 
-        UIManager.Instance.SetActiveView("LevelEnd");
-    }
-
-    public void NextLevel()
-    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         ChangeGameState(GameState.Play);
     }

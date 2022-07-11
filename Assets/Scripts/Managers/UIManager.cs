@@ -63,14 +63,14 @@ public class UIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        GameManager.Instance.NextLevel();
         HideActiveView();
+        GameManager.Instance.NextLevel();
     }
 
     public void PlayLastLevel()
     {
-        GameManager.Instance.PlayLastLevel();
         HideActiveView();
+        GameManager.Instance.PlayLastLevel();
     }
 
     public void ShowSelectLevel()

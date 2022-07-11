@@ -4,6 +4,7 @@ using System.Diagnostics;
 public class Timer
 {
     private Stopwatch stopWatch;
+
     public void StartTimer()
     {
         stopWatch = new Stopwatch();
