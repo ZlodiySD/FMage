@@ -1,7 +1,7 @@
 # FMage
-Unity game for gamejam [MiniJam 110: Sacrifice] (https://itch.io/jam/mini-jam-110-sacrifice)
+Unity game for gamejam [MiniJam 110: Sacrifice](https://itch.io/jam/mini-jam-110-sacrifice)
 
-Link to project build for jam [build v1.1] (https://zlodiy.itch.io/fmage)
+Link to project build for jam [build v1.1](https://zlodiy.itch.io/fmage)
 
 # Controlls 
 - A,D - Movement
